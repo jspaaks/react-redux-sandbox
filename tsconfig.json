@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "outDir": "build",
+        "sourceMap": true
+    },
+    "files": [
+        "src/client.ts",
+        "src/item.ts"
+    ],
+    "exclude": ["sites"]
+}
