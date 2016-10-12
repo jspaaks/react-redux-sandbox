@@ -8,6 +8,7 @@ export class Item {
     public isunderlined: boolean;
     public word: string;
 
+
     constructor(word: string, isitalic: boolean = false, isbold: boolean = false, isunderlined: boolean = false) {
         this.word = word;
         this.isitalic = isitalic;
@@ -22,7 +23,10 @@ export class Item {
 
         let clone:Item = new Item(this.word, this.isitalic, this.isbold, this.isunderlined);
         if (retainId) {
+            // use the old id in the new object
             clone.id = this.id;
+            // reset the static id
+            Item.id -= 1;
         }
         return clone;
     }
