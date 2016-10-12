@@ -7,7 +7,13 @@
         "sourceMap": true
     },
     "files": [
-        "src/client.ts",
+        "src/components/footer.tsx",
+        "src/components/header.tsx",
+        "src/components/page-layout.tsx",
+        "src/components/table.tsx",
+        "src/components/table-item-list.tsx",
+        "src/components/table-item.tsx",
+        "src/client.tsx",
         "src/item.ts"
     ],
     "exclude": ["sites"]
