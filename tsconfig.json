@@ -16,5 +16,10 @@
         "src/client.tsx",
         "src/item.ts"
     ],
-    "exclude": ["sites"]
+    "exclude": ["docs",
+        "node_modules",
+        "build",
+        "dist",
+        "test"
+    ]
 }
