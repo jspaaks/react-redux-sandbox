@@ -1,4 +1,6 @@
-export class Item {
+
+
+export default class Item {
 
     static id = 0;
     private static readonly bold = 1;
