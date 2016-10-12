@@ -46,6 +46,8 @@
     "url": "https://github.com/jspaaks/react-redux-sandbox.git"
   },
   "devDependencies": {
+    "@types/react": "^0.14.41",
+    "@types/react-dom": "^0.14.17",
     "browserify": "^13.1.0",
     "browserify-shim": "^3.8.12",
     "csslint": "^1.0.2",
