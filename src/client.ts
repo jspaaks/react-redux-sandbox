@@ -27,7 +27,7 @@ function reducer (state = initstate, action: any) {
             console.log("toggling bold of item with id=" + action.id.toString());
             state = state.filter(byIdFun);
             // toggle the state of isbold
-            obj.isbold = !obj.isbold;
+            obj.toggle("bold");
             state = state.concat(obj);
             console.log("state after", state);
             return state;
@@ -36,7 +36,7 @@ function reducer (state = initstate, action: any) {
             console.log("toggling italic of item with id=" + action.id.toString());
             state = state.filter(byIdFun);
             // toggle the state of isitalic
-            obj.isitalic = !obj.isitalic;
+            obj.toggle("italic");
             state = state.concat(obj);
             console.log("state after", state);
             return state;
@@ -45,7 +45,7 @@ function reducer (state = initstate, action: any) {
             console.log("toggling underlined of item with id=" + action.id.toString());
             state = state.filter(byIdFun);
             // toggle the state of isunderlined
-            obj.isunderlined = !obj.isunderlined;
+            obj.toggle("underlined");
             state = state.concat(obj);
             console.log("state after", state);
             return state;
@@ -89,6 +89,13 @@ window.setTimeout(f, 3500);
 window.setTimeout(f, 4000);
 
 window.setTimeout(function(){store.dispatch({type: "TOGGLE_BOLD", id: 0}); }, 6000);
+window.setTimeout(function(){store.dispatch({type: "TOGGLE_ITALIC", id: 0}); }, 6100);
+window.setTimeout(function(){store.dispatch({type: "TOGGLE_UNDERLINED", id: 0}); }, 6200);
+
+window.setTimeout(function(){store.dispatch({type: "TOGGLE_BOLD", id: 0}); }, 7000);
+window.setTimeout(function(){store.dispatch({type: "TOGGLE_ITALIC", id: 0}); }, 7100);
+window.setTimeout(function(){store.dispatch({type: "TOGGLE_UNDERLINED", id: 0}); }, 7200);
+
 window.setTimeout(function(){store.dispatch({type: "TOGGLE_ITALIC", id: 1}); }, 8000);
 window.setTimeout(function(){store.dispatch({type: "TOGGLE_UNDERLINED", id: 2}); }, 10000);
 window.setTimeout(function(){store.dispatch({type: "REMOVE_ITEM", id: 3}); }, 13000);

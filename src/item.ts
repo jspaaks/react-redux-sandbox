@@ -1,12 +1,16 @@
 export class Item {
 
     static id = 0;
+    private static readonly bold = 1;
+    private static readonly italic = 2;
+    private static readonly underlined = 4;
 
     public id: number;
-    public isbold: boolean;
-    public isitalic: boolean;
-    public isunderlined: boolean;
-    public word: string;
+    private isbold: boolean;
+    private isitalic: boolean;
+    private isunderlined: boolean;
+    private serialized: number;
+    public readonly word: string;
 
 
     constructor(word: string, isitalic: boolean = false, isbold: boolean = false, isunderlined: boolean = false) {
@@ -16,6 +20,7 @@ export class Item {
         this.isunderlined = isunderlined;
         this.id = Item.id;
         Item.id += 1;
+        this.serialize();
     }
 
 
@@ -30,4 +35,45 @@ export class Item {
         }
         return clone;
     }
+
+
+    private serialize(): Item {
+        let serialized = 0;
+        if (this.isbold) {
+            serialized += Item.bold;
+        }
+        if (this.isitalic) {
+            serialized += Item.italic;
+        }
+        if (this.isunderlined) {
+            serialized += Item.underlined;
+        }
+        this.serialized = serialized;
+        return this;
+    }
+
+
+    public toggle(str: string): Item {
+        switch (str) {
+            case "bold": {
+                this.isbold = !this.isbold;
+                this.serialize();
+                return this;
+            }
+            case "italic": {
+                this.isitalic = !this.isitalic;
+                this.serialize();
+                return this;
+            }
+            case "underlined": {
+                this.isunderlined = !this.isunderlined;
+                this.serialize();
+                return this;
+            }
+            default: {
+                throw new Error("Can't toggle unknown property.");
+            }
+        }
+    }
+
 }
