@@ -35,15 +35,15 @@
     "uglifyjs": "uglifyjs dist/client.js --output dist/client.min.js --source-map dist/client.min.js.map --screw-ie8 --in-source-map dist/client.js.map --source-map-url client.min.js.map"
   },
   "keywords": [
-    "typescript",
-    "punchcard",
-    "visualization"
+    "react",
+    "redux",
+    "sandbox"
   ],
-  "author": "Johan Hidding, Mateusz Kuzak, Jurriaan H. Spaaks, Lourens Veen, Faruk Diblen",
+  "author": "Jurriaan H. Spaaks",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nlesc-sherlock/punchcardjs.git"
+    "url": "https://github.com/jspaaks/react-redux-sandbox.git"
   },
   "devDependencies": {
     "browserify": "^13.1.0",
