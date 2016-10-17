@@ -4,7 +4,7 @@ import Header         from "./header";
 import Table          from "./table";
 import TableItemAdder from "./table-item-adder";
 import Footer         from "./footer";
-import Item           from "../item";
+import Item           from "./item";
 
 
 
@@ -20,10 +20,15 @@ export class PageLayout extends React.Component<any, any> {
         super();
         this.state = {
             title: "WordStylerz",
-            words: [
-                new Item("firstword"),
-                new Item("secondword"),
-                new Item("thirdword")
+            items: [
+                new Item("no style", false, false, false),
+                new Item("onlybold", true, false, false),
+                new Item("only italic", false, true, false),
+                new Item("bold+italic", true, true, false),
+                new Item("only underlined", false, false, true),
+                new Item("bold + underlined", true, false, true),
+                new Item("italic + underlined", false, true, true),
+                new Item("bold+italic+underlined", true, true, true)
             ]
         };
     }
@@ -42,7 +47,7 @@ export class PageLayout extends React.Component<any, any> {
         let tsx = (
             <div>
                 <Header title={this.state.title} changeTitle={this.changeTitle.bind(this)}/>
-                <Table />
+                <Table items={this.state.items}/>
                 <TableItemAdder />
                 <Footer />
             </div>
