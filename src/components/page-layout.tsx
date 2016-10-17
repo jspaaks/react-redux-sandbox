@@ -18,14 +18,30 @@ export class PageLayout extends React.Component<any, any> {
     constructor() {
         // call super to inherit from React.Component
         super();
+        this.state = {
+            title: "WordStylerz",
+            words: [
+                new Item("firstword"),
+                new Item("secondword"),
+                new Item("thirdword")
+            ]
+        };
     }
+
+
+    public changeTitle(title: string): PageLayout {
+        // not react / flux compliant:
+        this.state.title = title;
+        this.setState(this.state);
+        return this;
+    }
+
 
     public render () {
 
-        console.log(this.props.words);
         let tsx = (
             <div>
-                <Header />
+                <Header title={this.state.title} changeTitle={this.changeTitle.bind(this)}/>
                 <Table />
                 <TableItemAdder />
                 <Footer />
