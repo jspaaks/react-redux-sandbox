@@ -1,9 +1,14 @@
 import * as React    from "react";
 import * as ReactDOM from "react-dom";
-import Item          from "../item";
+import Item          from "./item";
 
+type props = {
+    item: Item
+};
+type state = {
+};
 
-export default class TableItem extends React.Component<{}, {}> {
+export default class TableItem extends React.Component<props, state> {
 
     constructor () {
         super();
@@ -11,13 +16,14 @@ export default class TableItem extends React.Component<{}, {}> {
 
 
     public render() {
+
         let tsx = (
             <tr>
-                <td>x</td>
-                <td>word</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
+                <td>{this.props.item.word}</td>
+                <td>{this.props.item.isbold ? "1" : "0"}</td>
+                <td>{this.props.item.isitalic ? "1" : "0"}</td>
+                <td>{this.props.item.isunderlined ? "1" : "0"}</td>
+                <td>{this.props.item.serialized.toString()}</td>
             </tr>
         );
         return tsx;
