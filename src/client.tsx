@@ -7,12 +7,7 @@ import Item            from "./item";
 
 let container = document.getElementById("container");
 
-let words = [
-    new Item("firstword"),
-    new Item("secondword"),
-    new Item("thirdword")
-];
-ReactDOM.render(<PageLayout words={words} />, container);
+ReactDOM.render(<PageLayout />, container);
 
 
 
