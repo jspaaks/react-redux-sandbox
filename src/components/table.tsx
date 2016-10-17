@@ -1,13 +1,18 @@
 import * as React    from "react";
 import * as ReactDOM from "react-dom";
 import TableItemList from "./table-item-list";
+import Item          from "./item";
 
 
-export default class Table extends React.Component<{}, {}> {
+type props = {
+    items: Item[]
+};
+type state = {};
+
+export default class Table extends React.Component<props, state> {
 
     constructor () {
         super();
-
     }
 
 
@@ -15,7 +20,7 @@ export default class Table extends React.Component<{}, {}> {
         let tsx = (
             <table>
                 <thead></thead>
-                <TableItemList />
+                <TableItemList items={this.props.items} />
                 <tfoot></tfoot>
                 <caption></caption>
             </table>
