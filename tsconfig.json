@@ -13,7 +13,7 @@
         "src/components/table.tsx",
         "src/components/table-item-list.tsx",
         "src/components/table-item.tsx",
-        "src/client.tsx",
+        "src/app.tsx",
         "src/item.ts"
     ],
     "exclude": ["docs",
