@@ -12,6 +12,9 @@ type state = {
     items: Item[]
 };
 
+
+let firstrun = true;
+
 export class PageLayout extends React.Component<props, state> {
 
 
@@ -32,7 +35,6 @@ export class PageLayout extends React.Component<props, state> {
                 new Item("bold+italic+underlined", true, true, true)
             ]
         };
-
     }
 
     public changeTitle(title: string): PageLayout {
@@ -62,6 +64,18 @@ export class PageLayout extends React.Component<props, state> {
 
 
     public render () {
+
+        if (firstrun) {
+            setTimeout(() => {
+                let item: Item = new Item("added item");
+                this.addItem(item);
+            }, 3000);
+            setTimeout(() => {
+                let id: number = 0;
+                this.removeItem(id);
+            }, 6000);
+            firstrun = false;
+        }
 
         let tsx = (
             <div>
