@@ -2,7 +2,7 @@
   "name": "react-redux-sandbox",
   "version": "0.0.0",
   "description": "sandbox testing some react and redux stuff",
-  "main": "/.dist/client.js",
+  "main": "/.dist/app.js",
   "scripts": {
     "clean-build": "trash build/",
     "clean-cover": "trash docs/sites/coverage/",
@@ -12,10 +12,10 @@
     "clean-sites": "npm run clean-cover & npm run clean-tsdoc",
     "clean-tsdoc": "trash docs/sites/tsdoc/",
     "cover": "npm run test && npm run remap-istanbul-json && npm run remap-istanbul-html",
-    "csslint": "cat src/components/*.css src/*.css > dist/client.css && csslint --config=.csslintrc --format=compact dist/client.css",
-    "dist": "browserify src/client.tsx --debug --standalone client -p [ tsify --project . ] > build/client-with-source-maps.js && npm run csslint",
+    "csslint": "cat src/components/*.css src/*.css > dist/app.css && csslint --config=.csslintrc --format=compact dist/app.css",
+    "dist": "browserify src/app.tsx --debug --standalone app -p [ tsify --project . ] > build/app-with-source-maps.js && npm run csslint",
     "everything": "npm run tsdoc && npm run cover",
-    "exorcist": "<build/client-with-source-maps.js exorcist dist/client.js.map > dist/client.js",
+    "exorcist": "<build/app-with-source-maps.js exorcist dist/app.js.map > dist/app.js",
     "jshint": "jshint test/*.js",
     "jslint": "jslint test/*.js",
     "lint": "npm run tslint && npm run jshint && npm run jslint && npm run csslint",
@@ -31,8 +31,8 @@
     "test": "karma start karma.conf.js",
     "tsdoc": "typedoc --out docs/sites/tsdoc/ .",
     "tslint": "tslint --config tslint.json ./src/**/*.ts",
-    "uglifycss": "uglifycss dist/client.css > dist/client.min.css",
-    "uglifyjs": "uglifyjs dist/client.js --output dist/client.min.js --source-map dist/client.min.js.map --screw-ie8 --in-source-map dist/client.js.map --source-map-url client.min.js.map"
+    "uglifycss": "uglifycss dist/app.css > dist/app.min.css",
+    "uglifyjs": "uglifyjs dist/app.js --output dist/app.min.js --source-map dist/app.min.js.map --screw-ie8 --in-source-map dist/app.js.map --source-map-url app.min.js.map"
   },
   "keywords": [
     "react",
@@ -87,12 +87,12 @@
   },
   "files": [
     "CHANGELOG",
-    "dist/client.js",
-    "dist/client.js.map",
-    "dist/client.min.js",
-    "dist/client.min.js.map",
-    "dist/client.css",
-    "dist/client.min.css",
+    "dist/app.js",
+    "dist/app.js.map",
+    "dist/app.min.js",
+    "dist/app.min.js.map",
+    "dist/app.css",
+    "dist/app.min.css",
     "LICENSE",
     "package.json",
     "README"
