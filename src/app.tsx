@@ -4,9 +4,14 @@ import * as ReactDOM   from "react-dom";
 import { PageLayout }  from "./components/page-layout";
 
 
-let container = document.getElementById("container");
+export class App {
 
-ReactDOM.render(<PageLayout />, container);
+    constructor() {
+        let container = document.getElementById("container");
+        ReactDOM.render(<PageLayout />, container);
+    }
+
+}
 
 
-
+let app:App = new App();
