@@ -6,18 +6,19 @@ import TableItemAdder from "./table-item-adder";
 import Footer         from "./footer";
 import Item           from "./item";
 
+type props = {};
+type state = {
+    title: string,
+    items: Item[]
+};
 
-
-
-/**
- * Parent container for the entire example
- */
-export class PageLayout extends React.Component<any, any> {
+export class PageLayout extends React.Component<props, state> {
 
 
     constructor() {
         // call super to inherit from React.Component
         super();
+
         this.state = {
             title: "WordStylerz",
             items: [
@@ -31,8 +32,8 @@ export class PageLayout extends React.Component<any, any> {
                 new Item("bold+italic+underlined", true, true, true)
             ]
         };
-    }
 
+    }
 
     public changeTitle(title: string): PageLayout {
         // not react / flux compliant:
@@ -42,13 +43,31 @@ export class PageLayout extends React.Component<any, any> {
     }
 
 
+    public addItem(item:Item): PageLayout {
+        this.state.items.push(item);
+        this.setState(this.state);
+        return this;
+    }
+
+
+    public removeItem(id:number): PageLayout {
+
+        this.state.items = this.state.items.filter((item:Item) => {
+            return item.id !== id;
+        });
+        this.setState(this.state);
+        return this;
+    }
+
+
+
     public render () {
 
         let tsx = (
             <div>
                 <Header title={this.state.title} changeTitle={this.changeTitle.bind(this)}/>
-                <Table items={this.state.items}/>
-                <TableItemAdder />
+                <Table items={this.state.items} />
+                <TableItemAdder addItem={this.addItem.bind(this)}/>
                 <Footer />
             </div>
         );
