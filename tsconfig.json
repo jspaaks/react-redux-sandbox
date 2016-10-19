@@ -1,25 +1,31 @@
 {
     "compilerOptions": {
-        "target": "es5",
-        "sourceMap": true,
+        "jsx": "react",
         "noImplicitAny": true,
         "outDir": "build",
-        "jsx": "react"
+        "sourceMap": true,
+        "target": "es6"
     },
     "files": [
+        "src/components/app.tsx",
         "src/components/footer.tsx",
         "src/components/header.tsx",
+        "src/components/item.ts",
         "src/components/page-layout.tsx",
-        "src/components/table.tsx",
+        "src/components/table-item-adder.tsx",
         "src/components/table-item-list.tsx",
         "src/components/table-item.tsx",
-        "src/app.tsx",
-        "src/item.ts"
+        "src/components/table.tsx",
+        "src/index.ts",
+        "src/reducers/header-reducer.ts",
+        "src/reducers/item-reducer.ts",
+        "src/reducers/reducers.ts"
     ],
-    "exclude": ["docs",
-        "node_modules",
+    "exclude": [
         "build",
         "dist",
+        "docs",
+        "node_modules",
         "test"
     ]
 }
