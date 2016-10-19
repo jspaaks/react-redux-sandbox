@@ -1,17 +1,25 @@
-import { createStore } from "redux";
+
 import * as React      from "react";
 import * as ReactDOM   from "react-dom";
-import { PageLayout }  from "./components/page-layout";
+import { PageLayout }  from "./page-layout";
+import Item            from "./item";
 
 
-export class App {
+type AppProps = {
+};
 
-    constructor() {
+type AppState = {
+    title: string,
+    items: Array<Item>
+};
+
+export default class App extends React.Component<AppProps, AppState> {
+
+    constructor(store: any) {
+        super();
+        this.state = store.getState();
         let container = document.getElementById("container");
-        ReactDOM.render(<PageLayout />, container);
+        ReactDOM.render(<PageLayout title={this.state.title} items={this.state.items}/>, container);
     }
-
 }
 
-
-let app:App = new App();
