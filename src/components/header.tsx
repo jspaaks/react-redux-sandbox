@@ -1,12 +1,13 @@
 import * as React     from "react";
-import * as ReactDOM  from "react-dom";
 
 
 type props = {
     title: string,
 };
+type state = {
+};
 
-export default class Header extends React.Component<props, {}> {
+export default class Header extends React.Component<props, state> {
 
     constructor () {
         super();

@@ -1,5 +1,4 @@
 import * as React     from "react";
-import * as ReactDOM  from "react-dom";
 import Header         from "./header";
 import Table          from "./table";
 import TableItemAdder from "./table-item-adder";
@@ -8,7 +7,7 @@ import Item           from "./item";
 
 type props = {
     title: string,
-    items: Item[]
+    items: Array<Item>
 };
 type state = {
 };
@@ -21,8 +20,6 @@ export class PageLayout extends React.Component<props, state> {
         // call super to inherit from React.Component
         super();
     }
-
-
 
 
     public render () {

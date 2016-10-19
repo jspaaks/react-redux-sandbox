@@ -1,10 +1,9 @@
-import * as ReactDOM from "react-dom";
 import * as React    from "react";
 import TableItem     from "./table-item";
 import Item          from "./item";
 
 type props = {
-    items: Item[]
+    items: Array<Item>
 };
 type state = {};
 

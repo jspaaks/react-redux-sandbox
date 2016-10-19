@@ -1,6 +1,4 @@
 import * as React    from "react";
-import * as ReactDOM from "react-dom";
-import Item          from "./item";
 
 
 type props = {
