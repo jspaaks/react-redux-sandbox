@@ -16,11 +16,14 @@ export default class TableItemList extends React.Component<props, state> {
 
 
     public render() {
+
+        let tableItemList = this.props.items.map((item) => {
+            return <TableItem item={item} key={item.id} />;
+        });
+
         let tsx = (
             <tbody>
-                {this.props.items.map((item) => {
-                    return <TableItem item={item} key={item.id} />;
-                })}
+                {tableItemList}
             </tbody>
         );
         return tsx;
