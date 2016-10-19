@@ -1,12 +1,9 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-
-import { PageLayout } from "./page-layout";
+import * as React     from "react";
+import * as ReactDOM  from "react-dom";
 
 
 type props = {
-    title:string,
-    changeTitle: (title:string) => PageLayout
+    title: string,
 };
 
 export default class Header extends React.Component<props, {}> {
@@ -15,18 +12,12 @@ export default class Header extends React.Component<props, {}> {
         super();
     }
 
-    public onChange(e: any) {
-        // e is the event you get from the 'input' element
-        let str: string = "A whole new title " + Date.now().toString() + e.target.value;
-        this.props.changeTitle(str);
-    }
-
 
     public render() {
         let tsx = (
             <div>
                 <p className="header">{this.props.title}</p>
-                <input defaultValue="type here" onChange={this.onChange.bind(this)}/>
+                <input defaultValue="type here" />
             </div>
         );
         return tsx;
