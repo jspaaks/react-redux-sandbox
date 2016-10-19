@@ -1,8 +1,7 @@
 
 import * as React      from "react";
-import * as ReactDOM   from "react-dom";
-import { PageLayout }  from "./page-layout";
 import Item            from "./item";
+import { PageLayout }  from "./page-layout";
 
 
 type AppProps = {
@@ -15,11 +14,16 @@ type AppState = {
 
 export default class App extends React.Component<AppProps, AppState> {
 
-    constructor(store: any) {
+    constructor() {
         super();
-        this.state = store.getState();
-        let container = document.getElementById("container");
-        ReactDOM.render(<PageLayout title={this.state.title} items={this.state.items}/>, container);
+    }
+
+
+    public render() {
+        let tsx = (
+            <PageLayout title={this.state.title} items={this.state.items}/>
+        );
+        return tsx;
     }
 }
 
