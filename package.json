@@ -46,17 +46,17 @@
     "url": "https://github.com/jspaaks/react-redux-sandbox.git"
   },
   "devDependencies": {
-    "@types/react": "^0.14.41",
     "@types/react-dom": "^0.14.17",
-    "browserify": "^13.1.0",
+    "@types/react-redux": "^4.4.32",
+    "@types/react": "^0.14.41",
     "browserify-shim": "^3.8.12",
+    "browserify": "^13.1.0",
     "csslint": "^1.0.2",
     "exorcist": "^0.4.0",
     "istanbul": "^0.4.4",
     "jasmine-core": "^2.4.1",
     "jshint": "^2.9.3",
     "jslint": "^0.10.3",
-    "karma": "^1.2.0",
     "karma-coverage": "^1.1.1",
     "karma-fixture": "^0.2.6",
     "karma-html2js-preprocessor": "^1.0.0",
@@ -64,10 +64,8 @@
     "karma-json-fixtures-preprocessor": "0.0.6",
     "karma-phantomjs-launcher": "^1.0.1",
     "karma-spec-reporter": "0.0.26",
+    "karma": "^1.2.0",
     "mkdirp": "^0.5.1",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "redux": "^3.6.0",
     "remap-istanbul": "^0.6.4",
     "trash-cli": "^1.3.0",
     "tsify": "^1.0.3",
@@ -78,7 +76,10 @@
     "uglifycss": "0.0.21"
   },
   "dependencies": {
-    "react-redux": "^4.4.5"
+    "react-dom": "^15.3.2",
+    "react-redux": "^4.4.5",
+    "react": "^15.3.2",
+    "redux": "^3.6.0"
   },
   "browser": {},
   "browserify-shim": {},
