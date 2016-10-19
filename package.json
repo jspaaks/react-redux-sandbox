@@ -13,7 +13,7 @@
     "clean-tsdoc": "trash docs/sites/tsdoc/",
     "cover": "npm run test && npm run remap-istanbul-json && npm run remap-istanbul-html",
     "csslint": "cat src/components/*.css > dist/app.css && csslint --config=.csslintrc --format=compact dist/app.css",
-    "dist": "browserify src/index.ts --debug --standalone app -p [ tsify --project . ] > build/app-with-source-maps.js && npm run csslint",
+    "dist": "browserify src/index.tsx --debug --standalone app -p [ tsify --project . ] > build/app-with-source-maps.js && npm run csslint",
     "everything": "npm run tsdoc && npm run cover",
     "exorcist": "<build/app-with-source-maps.js exorcist dist/app.js.map > dist/app.js",
     "jshint": "jshint test/*.js",

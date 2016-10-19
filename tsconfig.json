@@ -16,7 +16,7 @@
         "src/components/table-item-list.tsx",
         "src/components/table-item.tsx",
         "src/components/table.tsx",
-        "src/index.ts",
+        "src/index.tsx",
         "src/reducers/header-reducer.ts",
         "src/reducers/item-reducer.ts",
         "src/reducers/reducers.ts"
