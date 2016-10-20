@@ -5,8 +5,8 @@ let initstate: StateType = "";
 export default function (state: StateType = initstate, action: any) {
 
     switch (action.type) {
-        case "CHANGE_HEADER": {
-            return action.text;
+        case "CHANGE_HEADERTEXT": {
+            return action.payload;
         }
         default: {
             return state;
