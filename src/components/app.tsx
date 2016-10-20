@@ -1,15 +1,15 @@
-
-import * as React      from "react";
-import Item            from "./item";
-import { PageLayout }  from "./page-layout";
+import * as React  from "react";
+import { connect } from "react-redux";
+import Item        from "./item";
+import Header      from "./header";
+import Footer      from "./footer";
+import Table       from "./table";
 
 
 type AppProps = {
 };
 
 type AppState = {
-    title: string,
-    items: Array<Item>
 };
 
 export default class App extends React.Component<AppProps, AppState> {
@@ -20,10 +20,22 @@ export default class App extends React.Component<AppProps, AppState> {
 
 
     public render() {
+
+        // Connected Component
+        let ConnectedHeader = connect(
+            Header.mapStateToProps,
+            Header.mapDispatchToProps
+        )(Header);
+
         let tsx = (
-            <PageLayout title={this.state.title} items={this.state.items}/>
+            <div>
+                <ConnectedHeader />
+                <Table />
+                <Footer />
+            </div>
         );
         return tsx;
     }
 }
+
 

@@ -1,14 +1,15 @@
 import * as React    from "react";
+import { connect }   from "react-redux";
 import TableItemList from "./table-item-list";
 import Item          from "./item";
 
 
-type props = {
-    items: Array<Item>
+type TableProps = {
 };
-type state = {};
+type TableState = {
+};
 
-export default class Table extends React.Component<props, state> {
+export default class Table extends React.Component<TableProps, TableState> {
 
     constructor () {
         super();
@@ -16,10 +17,20 @@ export default class Table extends React.Component<props, state> {
 
 
     public render() {
+
+        let ConnectedTableItemList = connect(TableItemList.mapStateToProps)(TableItemList);
+
         let tsx = (
             <table>
-                <thead></thead>
-                <TableItemList items={this.props.items} />
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>bold</th>
+                        <th>italic</th>
+                        <th>underlined</th>
+                    </tr>
+                </thead>
+                <ConnectedTableItemList />
                 <tfoot></tfoot>
                 <caption></caption>
             </table>
