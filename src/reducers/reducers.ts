@@ -3,16 +3,16 @@ import headerreducer from "./header-reducer";
 import Item          from "../components/item";
 
 type StateType = {
-    title: string,
+    headertext: string,
     items: Array<Item>
 };
 let initstate: StateType = {
-    title: "",
+    headertext: "",
     items: []
 };
 export default function (state: StateType = initstate, action:any) {
     return {
-        title: headerreducer(state.title, action),
+        headertext: headerreducer(state.headertext, action),
         items: itemreducer(state.items, action)
     };
 }
