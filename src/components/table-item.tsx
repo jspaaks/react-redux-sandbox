@@ -16,12 +16,17 @@ export default class TableItem extends React.Component<props, state> {
 
     public render() {
 
+        let hexBallotBox = {
+            withCheck: "\u2611",
+            withoutCheck: "\u2610"
+        };
+
         let tsx = (
             <tr>
                 <td>{this.props.item.word}</td>
-                <td>{this.props.item.isbold ? "1" : "0"}</td>
-                <td>{this.props.item.isitalic ? "1" : "0"}</td>
-                <td>{this.props.item.isunderlined ? "1" : "0"}</td>
+                <td>{this.props.item.isbold ? hexBallotBox.withCheck :  hexBallotBox.withoutCheck}</td>
+                <td>{this.props.item.isitalic ? hexBallotBox.withCheck :  hexBallotBox.withoutCheck}</td>
+                <td>{this.props.item.isunderlined ? hexBallotBox.withCheck :  hexBallotBox.withoutCheck}</td>
                 <td>{this.props.item.serialized.toString()}</td>
             </tr>
         );
