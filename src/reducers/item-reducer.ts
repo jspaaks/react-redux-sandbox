@@ -12,11 +12,11 @@ export default function (state: StateType, action: any) {
 
         switch (action.type) {
             case "ADD_ITEM": {
-                return state.concat([action.item]);
+                return state.concat([action.payload]);
             }
             case "TOGGLE_BOLD":
                 return state.map((item) => {
-                    if (action.id === item.id) {
+                    if (action.payload === item.id) {
                         // can't do
                         //
                         // return Object.assign({}, item, {isbold: !item.isbold});
@@ -30,7 +30,7 @@ export default function (state: StateType, action: any) {
                 });
             case "TOGGLE_ITALIC":
                 return state.map((item) => {
-                    if (action.id === item.id) {
+                    if (action.payload === item.id) {
                         // see note under TOGGLE_BOLD
                         return item.clone().toggle("italic");
                     } else {
@@ -39,7 +39,7 @@ export default function (state: StateType, action: any) {
                 });
             case "TOGGLE_UNDERLINED":
                 return state.map((item) => {
-                    if (action.id === item.id) {
+                    if (action.payload === item.id) {
                         // see note under TOGGLE_BOLD
                         return item.clone().toggle("underlined");
                     } else {
