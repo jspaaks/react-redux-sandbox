@@ -9,7 +9,7 @@ export default class Footer extends React.Component<{}, {}> {
 
     public render() {
         let tsx = (
-            <p className="footer">Made with React and TypeScript 2.0</p>
+            <p className="footer">Made with React, Redux, react-redux, and TypeScript 2.0</p>
         );
         return tsx;
     }
